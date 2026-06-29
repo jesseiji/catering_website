@@ -16,9 +16,9 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/images/icon-flame.svg" alt="" width={24} height={24} />
-            <span className="font-display font-bold text-amber text-base sm:text-lg tracking-wide">
-              HMH <span className="text-text-faint font-normal">&times;</span> JWB
+            <Image src="/images/icon-flame.svg" alt="" width={22} height={22} />
+            <span className="font-display font-bold text-gold text-base sm:text-lg tracking-wider uppercase">
+              HMH <span className="text-text-faint font-normal text-xs">&times;</span> JWB
             </span>
           </Link>
 
@@ -30,23 +30,17 @@ export function Navbar() {
             {user ? (
               <>
                 <NavLink href="/account">Account</NavLink>
-                <button
-                  onClick={() => signOut()}
-                  className="text-text-muted hover:text-amber transition-colors text-sm font-medium"
-                >
+                <button onClick={() => signOut()} className="text-text-faint hover:text-gold transition-colors text-xs font-medium tracking-wide uppercase">
                   Sign Out
                 </button>
               </>
             ) : (
               <NavLink href="/auth/login">Sign In</NavLink>
             )}
-            <Link
-              href="/order"
-              className="relative bg-crimson hover:bg-crimson-hover text-text font-medium px-5 py-2 rounded-full transition-colors"
-            >
+            <Link href="/order" className="relative bg-hot hover:bg-hot-hover text-white font-medium px-5 py-2 rounded transition-colors text-sm">
               Cart
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-amber text-bg text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-gold text-bg text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
@@ -55,20 +49,14 @@ export function Navbar() {
 
           <div className="flex items-center gap-4 md:hidden">
             <Link href="/order" className="relative">
-              <svg className="w-6 h-6 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
               </svg>
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-amber text-bg text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  {itemCount}
-                </span>
+                <span className="absolute -top-2 -right-2 bg-gold text-bg text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">{itemCount}</span>
               )}
             </Link>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="text-text p-1"
-              aria-label="Toggle menu"
-            >
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-text-muted p-1" aria-label="Toggle menu">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {menuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
@@ -82,7 +70,7 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-surface border-t border-border px-4 py-4 space-y-1">
+        <div className="md:hidden bg-surface border-t border-border px-4 py-3 space-y-1">
           <MobileLink href="/" onClick={() => setMenuOpen(false)}>Home</MobileLink>
           <MobileLink href="/menu" onClick={() => setMenuOpen(false)}>Menu</MobileLink>
           <MobileLink href="/order" onClick={() => setMenuOpen(false)}>Order</MobileLink>
@@ -90,10 +78,7 @@ export function Navbar() {
           {user ? (
             <>
               <MobileLink href="/account" onClick={() => setMenuOpen(false)}>Account</MobileLink>
-              <button
-                onClick={() => { signOut(); setMenuOpen(false); }}
-                className="block w-full text-left text-text-muted hover:text-amber py-2.5 px-3 text-sm rounded-lg transition-colors"
-              >
+              <button onClick={() => { signOut(); setMenuOpen(false); }} className="block w-full text-left text-text-faint hover:text-gold py-2.5 px-3 text-sm transition-colors">
                 Sign Out
               </button>
             </>
@@ -108,7 +93,7 @@ export function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-text-muted hover:text-text transition-colors text-sm font-medium tracking-wide">
+    <Link href={href} className="text-text-faint hover:text-text transition-colors text-xs font-medium tracking-wider uppercase">
       {children}
     </Link>
   );
@@ -116,7 +101,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 function MobileLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick: () => void }) {
   return (
-    <Link href={href} onClick={onClick} className="block text-text hover:text-amber py-2.5 px-3 text-sm font-medium rounded-lg hover:bg-surface-hover transition-colors">
+    <Link href={href} onClick={onClick} className="block text-text-muted hover:text-gold py-2.5 px-3 text-sm font-medium transition-colors">
       {children}
     </Link>
   );

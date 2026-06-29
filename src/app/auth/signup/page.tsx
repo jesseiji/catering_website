@@ -46,7 +46,7 @@ function SignUpForm() {
 
         <form onSubmit={handleSubmit} className="bg-surface rounded-xl border border-border p-6 sm:p-8 space-y-5">
           {error && (
-            <div className="bg-crimson/10 border border-crimson/30 rounded-lg px-4 py-3 text-crimson text-sm">{error}</div>
+            <div className="bg-hot/10 border border-hot/30 rounded-lg px-4 py-3 text-hot text-sm">{error}</div>
           )}
 
           <div>
@@ -67,7 +67,7 @@ function SignUpForm() {
 
           <button type="submit" disabled={loading}
             className={`w-full py-3.5 rounded-lg font-medium text-sm transition-colors ${
-              loading ? 'bg-surface-hover text-text-faint cursor-not-allowed' : 'bg-amber hover:bg-amber-hover text-bg'
+              loading ? 'bg-surface-hover text-text-faint cursor-not-allowed' : 'bg-gold hover:bg-gold-hover text-bg'
             }`}
           >
             {loading ? 'Creating account...' : 'Create Account'}
@@ -75,7 +75,7 @@ function SignUpForm() {
 
           <p className="text-center text-text-muted text-sm">
             Already have an account?{' '}
-            <Link href={`/auth/login?redirect=${encodeURIComponent(redirect)}`} className="text-amber hover:text-amber-hover font-medium transition-colors">Sign in</Link>
+            <Link href={`/auth/login?redirect=${encodeURIComponent(redirect)}`} className="text-gold hover:text-gold-hover font-medium transition-colors">Sign in</Link>
           </p>
         </form>
       </div>

@@ -43,7 +43,7 @@ export default function ContactPage() {
           <h1 className="font-display font-bold text-text text-4xl sm:text-5xl">
             Get in Touch
           </h1>
-          <div className="w-10 h-0.5 bg-amber mx-auto mt-4" />
+          <div className="w-10 h-0.5 bg-gold mx-auto mt-4" />
           <p className="text-text-muted text-sm mt-4">
             Questions, feedback, or special requests — we&apos;d love to hear from you.
           </p>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               className={`w-full py-3.5 rounded-lg font-medium text-sm transition-colors ${
                 loading
                   ? 'bg-surface-hover text-text-faint cursor-not-allowed'
-                  : 'bg-crimson hover:bg-crimson-hover text-text'
+                  : 'bg-hot hover:bg-hot-hover text-text'
               }`}
             >
               {loading ? 'Sending...' : 'Send Message'}
@@ -106,9 +106,9 @@ export default function ContactPage() {
         <div className="mt-8 text-center space-y-2">
           <p className="text-text-faint text-sm">Or reach us directly:</p>
           <p className="text-text-muted text-sm">
-            <a href="tel:3015325406" className="hover:text-amber transition-colors">301-532-5406</a>
+            <a href="tel:3015325406" className="hover:text-gold transition-colors">301-532-5406</a>
             {' '}&bull;{' '}
-            <a href="tel:2407306937" className="hover:text-amber transition-colors">240-730-6937</a>
+            <a href="tel:2407306937" className="hover:text-gold transition-colors">240-730-6937</a>
           </p>
         </div>
       </div>

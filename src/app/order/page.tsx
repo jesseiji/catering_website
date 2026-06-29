@@ -81,15 +81,15 @@ export default function OrderPage() {
     <div className="pt-24 pb-16 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="font-display font-bold text-text text-4xl sm:text-5xl">
+          <p className="text-hot text-xs font-medium uppercase tracking-[0.2em] mb-3">{isCatering ? 'Catering' : 'Order'}</p>
+          <h1 className="font-display font-bold text-text text-4xl sm:text-5xl tracking-tight">
             {isCatering ? 'Catering Order' : 'Your Order'}
           </h1>
-          <div className="w-10 h-0.5 bg-amber mx-auto mt-4" />
           <div className="mt-5 flex items-center justify-center gap-3">
             <button
               onClick={() => setIsCatering(false)}
               className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                !isCatering ? 'bg-amber text-bg' : 'bg-surface text-text-muted border border-border hover:border-border-hover'
+                !isCatering ? 'bg-gold text-bg' : 'bg-surface text-text-muted border border-border hover:border-border-hover'
               }`}
             >
               Regular Order
@@ -97,7 +97,7 @@ export default function OrderPage() {
             <button
               onClick={() => setIsCatering(true)}
               className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                isCatering ? 'bg-amber text-bg' : 'bg-surface text-text-muted border border-border hover:border-border-hover'
+                isCatering ? 'bg-gold text-bg' : 'bg-surface text-text-muted border border-border hover:border-border-hover'
               }`}
             >
               Catering
@@ -113,7 +113,7 @@ export default function OrderPage() {
                   Cart ({items.length} {items.length === 1 ? 'item' : 'items'})
                 </h2>
                 {items.length > 0 && (
-                  <button onClick={clearCart} className="text-crimson text-sm hover:text-crimson-hover transition-colors">
+                  <button onClick={clearCart} className="text-hot text-sm hover:text-hot-hover transition-colors">
                     Clear All
                   </button>
                 )}
@@ -123,7 +123,7 @@ export default function OrderPage() {
                 <div className="text-center py-12">
                   <Image src="/images/icon-flame.svg" alt="" width={32} height={32} className="mx-auto mb-4 opacity-20" />
                   <p className="text-text-muted text-sm">Your cart is empty.</p>
-                  <Link href="/menu" className="inline-block mt-3 text-amber hover:text-amber-hover transition-colors text-sm font-medium">
+                  <Link href="/menu" className="inline-block mt-3 text-gold hover:text-gold-hover transition-colors text-sm font-medium">
                     Browse the menu
                   </Link>
                 </div>
@@ -136,7 +136,7 @@ export default function OrderPage() {
                       <div key={cartItem.cartId} className="flex items-start gap-4 bg-surface-hover rounded-lg p-4">
                         <div className="flex-1 min-w-0">
                           <p className="text-text font-medium text-sm">{label}</p>
-                          <p className="text-amber text-sm mt-1">${menuItem.price} each</p>
+                          <p className="text-gold text-sm mt-1">${menuItem.price} each</p>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
                           <button
@@ -144,21 +144,21 @@ export default function OrderPage() {
                               if (cartItem.quantity <= 1) removeItem(cartItem.cartId);
                               else updateItem(cartItem.cartId, { quantity: cartItem.quantity - 1 });
                             }}
-                            className="w-8 h-8 rounded border border-border text-text-muted text-sm flex items-center justify-center hover:border-amber hover:text-amber transition-colors"
+                            className="w-8 h-8 rounded border border-border text-text-muted text-sm flex items-center justify-center hover:border-gold hover:text-gold transition-colors"
                           >
                             &minus;
                           </button>
                           <span className="text-text font-medium text-sm w-6 text-center">{cartItem.quantity}</span>
                           <button
                             onClick={() => updateItem(cartItem.cartId, { quantity: cartItem.quantity + 1 })}
-                            className="w-8 h-8 rounded border border-border text-text-muted text-sm flex items-center justify-center hover:border-amber hover:text-amber transition-colors"
+                            className="w-8 h-8 rounded border border-border text-text-muted text-sm flex items-center justify-center hover:border-gold hover:text-gold transition-colors"
                           >
                             +
                           </button>
                         </div>
                         <button
                           onClick={() => removeItem(cartItem.cartId)}
-                          className="text-text-faint hover:text-crimson transition-colors shrink-0"
+                          className="text-text-faint hover:text-hot transition-colors shrink-0"
                           aria-label="Remove item"
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +171,7 @@ export default function OrderPage() {
 
                   <div className="flex justify-between items-center pt-4 border-t border-border">
                     <span className="text-text font-display font-semibold text-lg">Subtotal</span>
-                    <span className="text-amber font-display font-bold text-xl">${subtotal}</span>
+                    <span className="text-gold font-display font-bold text-xl">${subtotal}</span>
                   </div>
                 </div>
               )}
@@ -216,9 +216,9 @@ export default function OrderPage() {
                 </FormField>
 
                 {!user && (
-                  <div className="bg-amber/5 border border-amber/20 rounded-lg p-4 text-center">
+                  <div className="bg-gold/5 border border-gold/20 rounded-lg p-4 text-center">
                     <p className="text-text-muted text-sm mb-2">Sign in to checkout and save your order history.</p>
-                    <Link href="/auth/login?redirect=/order" className="text-amber font-medium text-sm hover:text-amber-hover transition-colors">
+                    <Link href="/auth/login?redirect=/order" className="text-gold font-medium text-sm hover:text-gold-hover transition-colors">
                       Sign In / Create Account
                     </Link>
                   </div>
@@ -230,7 +230,7 @@ export default function OrderPage() {
                   className={`w-full py-3.5 rounded-lg font-semibold text-base transition-colors ${
                     loading || items.length === 0
                       ? 'bg-surface-hover text-text-faint cursor-not-allowed'
-                      : 'bg-crimson hover:bg-crimson-hover text-text'
+                      : 'bg-hot hover:bg-hot-hover text-text'
                   }`}
                 >
                   {loading ? 'Processing...' : `Checkout — $${subtotal}`}
