@@ -21,7 +21,9 @@ npm install
 
 ### 2. Configure environment variables
 
-Copy `.env.example` to `.env.local` and fill in your credentials:
+All env vars are set in **Vercel** under Project Settings > Environment Variables. See `.env.example` for the full list.
+
+For local development, create a `.env.local` from the example:
 
 ```bash
 cp .env.example .env.local
@@ -29,7 +31,7 @@ cp .env.example .env.local
 
 **Supabase:** Create a project at [supabase.com](https://supabase.com), then grab the URL, anon key, and service role key from Settings > API.
 
-**Stripe:** Get your API keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys). For the webhook secret, create a webhook endpoint pointing to `https://your-domain.com/api/webhook` listening for `checkout.session.completed` events.
+**Stripe:** Get your API keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys). For the webhook secret, create a webhook endpoint pointing to `https://your-domain.vercel.app/api/webhook` listening for `checkout.session.completed` events.
 
 **Formspree:** Create a form at [formspree.io](https://formspree.io) and paste the full endpoint URL.
 
@@ -100,11 +102,10 @@ The brand SVG icons (`icon-flame.svg`, `icon-high-heel.svg`) can stay as-is or b
 - **/auth/signup** — Create account
 - **/account** — Order history + reorder
 
-## Deployment
-
-Deploy to [Vercel](https://vercel.com) for the easiest setup:
+## Deployment (Vercel)
 
 1. Push to GitHub
 2. Import the repo in Vercel
-3. Add all env vars from `.env.example`
+3. Add all env vars from `.env.example` under Project Settings > Environment Variables
 4. Set the Stripe webhook URL to `https://your-domain.vercel.app/api/webhook`
+5. Deploy — Vercel auto-detects Next.js, no build config needed
