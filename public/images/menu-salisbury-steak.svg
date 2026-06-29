@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="300" cy="170" r="60" fill="#1e1e1e" stroke="#D4A847" stroke-width="2" opacity="0.6"/>
+  <text x="300" y="180" text-anchor="middle" fill="#D4A847" font-family="Georgia, serif" font-size="24" opacity="0.4">🍽</text>
+  <text x="300" y="280" text-anchor="middle" fill="#D4A847" font-family="Georgia, serif" font-size="22" font-weight="bold">Salisbury Steak</text>
+  <text x="300" y="310" text-anchor="middle" fill="#A8842F" font-family="sans-serif" font-size="12">PLACEHOLDER — REPLACE WITH PHOTO</text>
+</svg>
