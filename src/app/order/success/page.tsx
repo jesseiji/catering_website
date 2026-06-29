@@ -14,8 +14,8 @@ export default function OrderSuccessPage() {
   return (
     <div className="pt-24 pb-16 px-4 min-h-screen flex items-center justify-center">
       <div className="max-w-md mx-auto text-center">
-        <div className="w-16 h-16 rounded-full bg-amber/10 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -31,7 +31,7 @@ export default function OrderSuccessPage() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/account" className="bg-amber hover:bg-amber-hover text-bg font-medium py-3 px-8 rounded-lg transition-colors text-sm">
+          <Link href="/account" className="bg-gold hover:bg-gold-hover text-bg font-medium py-3 px-8 rounded-lg transition-colors text-sm">
             View Order History
           </Link>
           <Link href="/menu" className="bg-surface border border-border text-text font-medium py-3 px-8 rounded-lg transition-colors hover:border-border-hover text-sm">

@@ -79,7 +79,7 @@ export default function AccountPage() {
         ) : orders.length === 0 ? (
           <div className="bg-surface rounded-xl border border-border p-10 text-center">
             <p className="text-text-muted text-sm mb-2">No orders yet.</p>
-            <a href="/menu" className="text-amber text-sm font-medium hover:text-amber-hover transition-colors">Browse the menu</a>
+            <a href="/menu" className="text-gold text-sm font-medium hover:text-gold-hover transition-colors">Browse the menu</a>
           </div>
         ) : (
           <div className="space-y-4">
@@ -90,15 +90,15 @@ export default function AccountPage() {
                     <p className="text-text font-medium text-sm">
                       {new Date(order.created_at).toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}
                     </p>
-                    <p className="text-amber font-display font-bold text-lg mt-0.5">${order.total}</p>
+                    <p className="text-gold font-display font-bold text-lg mt-0.5">${order.total}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className={`text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wider ${
                       order.status === 'completed' ? 'bg-green-900/20 text-green-400' :
-                      order.status === 'pending' ? 'bg-amber/10 text-amber' :
+                      order.status === 'pending' ? 'bg-gold/10 text-gold' :
                       'bg-surface-hover text-text-muted'
                     }`}>{order.status}</span>
-                    <button onClick={() => handleReorder(order)} className="text-amber text-sm font-medium hover:text-amber-hover transition-colors">
+                    <button onClick={() => handleReorder(order)} className="text-gold text-sm font-medium hover:text-gold-hover transition-colors">
                       Reorder
                     </button>
                   </div>

@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  --bg: #0C0A09;
-  --surface: #1C1917;
-  --surface-hover: #292524;
-  --border: #292524;
-  --border-hover: #44403C;
-  --amber: #D97706;
-  --amber-hover: #F59E0B;
-  --amber-dim: #92400E;
-  --crimson: #BE123C;
-  --crimson-hover: #E11D48;
-  --text: #FEFCE8;
-  --text-muted: #A8A29E;
-  --text-faint: #78716C;
+  --bg: #09090B;
+  --surface: #171717;
+  --surface-hover: #262626;
+  --border: #262626;
+  --border-hover: #404040;
+  --gold: #C9962D;
+  --gold-hover: #DBAB3D;
+  --gold-faint: #8B6914;
+  --hot: #DC2626;
+  --hot-hover: #EF4444;
+  --text: #FAFAFA;
+  --text-muted: #A3A3A3;
+  --text-faint: #737373;
 }
 
 @theme inline {
@@ -23,16 +23,16 @@
   --color-surface-hover: var(--surface-hover);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
-  --color-amber: var(--amber);
-  --color-amber-hover: var(--amber-hover);
-  --color-amber-dim: var(--amber-dim);
-  --color-crimson: var(--crimson);
-  --color-crimson-hover: var(--crimson-hover);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-gold-faint: var(--gold-faint);
+  --color-hot: var(--hot);
+  --color-hot-hover: var(--hot-hover);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-text-faint: var(--text-faint);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Bodoni Moda', 'Didot', 'Georgia', serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
 body {
@@ -43,30 +43,21 @@ body {
 }
 
 ::selection {
-  background: var(--amber);
-  color: var(--bg);
+  background: var(--hot);
+  color: white;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--surface);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border-hover);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--amber-dim);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-faint); }
 
 input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--gold);
   outline-offset: 1px;
 }
 
