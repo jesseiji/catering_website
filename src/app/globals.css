@@ -1,88 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --black: #0A0A0A;
-  --charcoal: #161616;
-  --charcoal-light: #1E1E1E;
-  --gold: #D4A847;
-  --gold-bright: #F5D76E;
-  --gold-dim: #A8842F;
-  --red: #C41E3A;
-  --red-dark: #8B0000;
-  --red-glow: #E63950;
-  --cream: #FFF8E7;
-  --cream-dim: #D4CCB8;
-  --orange: #FF6B35;
+  --bg: #0C0A09;
+  --surface: #1C1917;
+  --surface-hover: #292524;
+  --border: #292524;
+  --border-hover: #44403C;
+  --amber: #D97706;
+  --amber-hover: #F59E0B;
+  --amber-dim: #92400E;
+  --crimson: #BE123C;
+  --crimson-hover: #E11D48;
+  --text: #FEFCE8;
+  --text-muted: #A8A29E;
+  --text-faint: #78716C;
 }
 
 @theme inline {
-  --color-black: var(--black);
-  --color-charcoal: var(--charcoal);
-  --color-charcoal-light: var(--charcoal-light);
-  --color-gold: var(--gold);
-  --color-gold-bright: var(--gold-bright);
-  --color-gold-dim: var(--gold-dim);
-  --color-red: var(--red);
-  --color-red-dark: var(--red-dark);
-  --color-red-glow: var(--red-glow);
-  --color-cream: var(--cream);
-  --color-cream-dim: var(--cream-dim);
-  --color-orange: var(--orange);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-amber: var(--amber);
+  --color-amber-hover: var(--amber-hover);
+  --color-amber-dim: var(--amber-dim);
+  --color-crimson: var(--crimson);
+  --color-crimson-hover: var(--crimson-hover);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
 body {
-  background: var(--black);
-  color: var(--cream);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--amber);
+  color: var(--bg);
 }
 
-/* Marquee gold text glow */
-.text-glow-gold {
-  text-shadow:
-    0 0 10px rgba(212, 168, 71, 0.4),
-    0 0 30px rgba(212, 168, 71, 0.2),
-    0 0 60px rgba(212, 168, 71, 0.1);
-}
-
-.text-glow-gold-strong {
-  text-shadow:
-    0 0 8px rgba(212, 168, 71, 0.6),
-    0 0 20px rgba(212, 168, 71, 0.4),
-    0 0 40px rgba(212, 168, 71, 0.2),
-    0 0 80px rgba(212, 168, 71, 0.1);
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--charcoal);
+  background: var(--surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold-dim);
-  border-radius: 4px;
+  background: var(--border-hover);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold);
+  background: var(--amber-dim);
 }
 
-/* Input focus ring override */
 input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--amber);
   outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

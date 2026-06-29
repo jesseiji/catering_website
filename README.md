@@ -7,14 +7,14 @@ Soul food catering & food truck website for **Hot Meals N High Heels x JWB Soul 
 - **Frontend:** Next.js 15 (App Router) + Tailwind CSS v4
 - **Auth & Database:** Supabase (email/password auth, order history)
 - **Payments:** Stripe Checkout (hosted payment page with itemized line items)
-- **Contact Form:** Formspree
+- **Contact Form:** Resend (server-side API route)
 
 ## Setup
 
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/catering_website.git
+git clone https://github.com/jesseiji/catering_website.git
 cd catering_website
 npm install
 ```
@@ -33,7 +33,7 @@ cp .env.example .env.local
 
 **Stripe:** Get your API keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys). For the webhook secret, create a webhook endpoint pointing to `https://your-domain.vercel.app/api/webhook` listening for `checkout.session.completed` events.
 
-**Formspree:** Create a form at [formspree.io](https://formspree.io) and paste the full endpoint URL.
+**Resend:** Sign up at [resend.com](https://resend.com), get your API key, and verify a sending domain (or use `onboarding@resend.dev` for testing). Set `CONTACT_EMAIL` to the email address where you want to receive contact form submissions.
 
 ### 3. Set up the Supabase database
 
@@ -70,34 +70,31 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Placeholder Images
+## Images
 
-All images in `public/images/` are SVG placeholders. Replace these with real photos:
+Food photos in `public/images/` are sourced from [Pexels](https://pexels.com) (free for commercial use, no attribution required). Replace with your own photos for a more authentic look:
 
 | File | Replace With |
 |------|-------------|
-| `hero-foodtruck-night.svg` | Food truck photo at night, city lights/neon vibe |
-| `menu-meaty-lasagna.svg` | Photo of meaty lasagna dish |
-| `menu-seafood-lasagna.svg` | Photo of seafood lasagna dish |
-| `menu-salisbury-steak.svg` | Photo of Salisbury steak with sides |
-| `menu-tuscan-salmon.svg` | Photo of Tuscan salmon & shrimp |
-| `menu-shrimp-deviled-eggs.svg` | Photo of shrimp deviled eggs |
-| `menu-deviled-eggs.svg` | Photo of regular deviled eggs |
-| `menu-mash-potatoes.svg` | Photo of herbal garlic mash potatoes |
-| `menu-chef-rice.svg` | Photo of chef rice |
-| `menu-string-beans.svg` | Photo of string beans |
-| `menu-coming-soon.svg` | Generic "coming soon" or dessert/drink teaser |
+| `hero-foodtruck-night.jpg` | Your food truck photo at night |
+| `menu-meaty-lasagna.jpg` | Your meaty lasagna dish |
+| `menu-seafood-lasagna.jpg` | Your seafood lasagna dish |
+| `menu-salisbury-steak.jpg` | Your Salisbury steak with sides |
+| `menu-tuscan-salmon.jpg` | Your Tuscan salmon & shrimp |
+| `menu-shrimp-deviled-eggs.jpg` | Your shrimp deviled eggs |
+| `menu-deviled-eggs.jpg` | Your regular deviled eggs |
+| `menu-mash-potatoes.jpg` | Your herbal garlic mash potatoes |
+| `menu-chef-rice.jpg` | Your chef rice |
+| `menu-string-beans.jpg` | Your string beans |
 
-When replacing, update the file extensions in `src/lib/menu-data.ts` (change `.svg` to `.jpg` or `.webp`).
-
-The brand SVG icons (`icon-flame.svg`, `icon-high-heel.svg`) can stay as-is or be replaced with custom brand assets.
+When replacing, keep the same filenames or update the paths in `src/lib/menu-data.ts`.
 
 ## Pages
 
 - **/** — Home page with hero, featured items, quick links
 - **/menu** — Full menu organized by category
 - **/order** — Cart + order form + Stripe Checkout
-- **/contact** — Formspree contact form
+- **/contact** — Contact form (Resend API)
 - **/auth/login** — Sign in
 - **/auth/signup** — Create account
 - **/account** — Order history + reorder

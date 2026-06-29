@@ -3,53 +3,51 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal border-t border-gold/10">
+    <footer className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Image src="/images/icon-flame.svg" alt="" width={24} height={24} />
-              <span className="font-display font-bold text-gold text-lg">HMH x JWB</span>
+            <div className="flex items-center gap-2 mb-3">
+              <Image src="/images/icon-flame.svg" alt="" width={20} height={20} />
+              <span className="font-display font-bold text-amber text-lg">HMH &times; JWB</span>
             </div>
-            <p className="text-cream-dim text-sm leading-relaxed">
-              Hot Meals N High Heels x JWB Soul Catering
+            <p className="text-text-muted text-sm leading-relaxed">
+              Hot Meals N High Heels<br />
+              &times; JWB Soul Catering
             </p>
-            <p className="text-gold font-display text-sm italic mt-2">Soul Food on Board!</p>
+            <p className="text-amber font-display italic text-sm mt-2">Soul Food on Board!</p>
           </div>
 
-          {/* Location & Hours */}
           <div>
-            <h3 className="font-display font-semibold text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
               Pickup Location
             </h3>
-            <p className="text-cream-dim text-sm leading-relaxed">
+            <p className="text-text-muted text-sm leading-relaxed">
               2645 Shadyside Avenue<br />
               Suitland, MD 20746
             </p>
-            <p className="text-cream-dim text-sm mt-3">
+            <p className="text-text-muted text-sm mt-3">
               Weekly pickups ~1:00 PM<br />
               Deliveries ~2:00 PM
             </p>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
               Contact
             </h3>
-            <p className="text-cream-dim text-sm">
-              <a href="tel:3015325406" className="hover:text-gold transition-colors">301-532-5406</a>
+            <p className="text-text-muted text-sm">
+              <a href="tel:3015325406" className="hover:text-amber transition-colors">301-532-5406</a>
             </p>
-            <p className="text-cream-dim text-sm mt-1">
-              <a href="tel:2407306937" className="hover:text-gold transition-colors">240-730-6937</a>
+            <p className="text-text-muted text-sm mt-1">
+              <a href="tel:2407306937" className="hover:text-amber transition-colors">240-730-6937</a>
             </p>
             <div className="mt-4 flex gap-4">
               <a
                 href="https://www.instagram.com/hotmealsnhighheelsxjwbsoul/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cream-dim hover:text-gold transition-colors"
+                className="text-text-muted hover:text-amber transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +58,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cream-dim hover:text-gold transition-colors"
+                className="text-text-muted hover:text-amber transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -70,32 +68,28 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Payment & Coming Soon */}
           <div>
-            <h3 className="font-display font-semibold text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
               We Accept
             </h3>
-            <p className="text-cream-dim text-sm">
+            <p className="text-text-muted text-sm">
               Cash &bull; Cash App &bull; Apple Pay &bull; Zelle
             </p>
-            <p className="text-cream-dim text-sm mt-1">+ Online payments via Stripe</p>
-            <div className="mt-6 flex items-center gap-2">
-              <Image src="/images/icon-high-heel.svg" alt="" width={16} height={16} />
-              <span className="text-red text-xs font-semibold uppercase tracking-wider">
-                Desserts & Drinks Coming Soon
-              </span>
-            </div>
+            <p className="text-text-muted text-sm mt-1">+ Online payments via Stripe</p>
+            <p className="text-amber-dim text-xs font-medium uppercase tracking-wider mt-6">
+              Desserts & Drinks Coming Soon
+            </p>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gold/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-cream-dim/60 text-xs">
-            &copy; {new Date().getFullYear()} Hot Meals N High Heels x JWB Soul Catering. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-text-faint text-xs">
+            &copy; {new Date().getFullYear()} Hot Meals N High Heels &times; JWB Soul Catering
           </p>
           <div className="flex gap-6">
-            <Link href="/menu" className="text-cream-dim/60 hover:text-gold text-xs transition-colors">Menu</Link>
-            <Link href="/order" className="text-cream-dim/60 hover:text-gold text-xs transition-colors">Order</Link>
-            <Link href="/contact" className="text-cream-dim/60 hover:text-gold text-xs transition-colors">Contact</Link>
+            <Link href="/menu" className="text-text-faint hover:text-amber text-xs transition-colors">Menu</Link>
+            <Link href="/order" className="text-text-faint hover:text-amber text-xs transition-colors">Order</Link>
+            <Link href="/contact" className="text-text-faint hover:text-amber text-xs transition-colors">Contact</Link>
           </div>
         </div>
       </div>
